@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- No permissions at all, not even the internet: PhoShare is offline by construction. The photo picker and the camera
+     app work without any. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.eoussama.phoshare">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".PhoShareApp"
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="33"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/icon"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".SplashActivity">
+        android:theme="@style/Theme.PhoShare">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PhoShare.Starting"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".ForgotPasswordNextActivity"></activity>
-    </application>
 
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
 </manifest>

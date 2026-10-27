@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A line of text between the post and its comments: how many there are, or that there are none. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/space_m"
+    android:paddingTop="@dimen/space_m"
+    android:paddingBottom="@dimen/space_s"
+    android:textAppearance="?attr/textAppearanceTitleSmall"
+    android:textColor="?attr/colorOnSurfaceVariant" />

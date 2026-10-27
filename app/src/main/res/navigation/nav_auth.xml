@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Before anyone is logged in. -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="es.ouss.phoshare.ui.auth.LoginFragment"
+        android:label="@string/app_name" />
+
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="es.ouss.phoshare.ui.auth.SignUpFragment"
+        android:label="@string/sign_up_title" />
+
+    <fragment
+        android:id="@+id/recover"
+        android:name="es.ouss.phoshare.ui.auth.RecoverFragment"
+        android:label="@string/recover_title">
+        <argument
+            android:name="username"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+</navigation>

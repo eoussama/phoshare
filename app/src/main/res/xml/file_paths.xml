@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- What the FileProvider may hand out: posted photos (to share) and the camera's new shots (to fill). -->
+<paths>
+    <files-path
+        name="photos"
+        path="photos/" />
+    <cache-path
+        name="camera"
+        path="camera/" />
+</paths>

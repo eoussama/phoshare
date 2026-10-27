@@ -1,56 +1,152 @@
-<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE resources[<!ENTITY appname "PhoShare">]>
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Global -->
-    <string name="app_name">&appname;</string>
-    <string name="app_slogan">Friendly photo sharing platform</string>
-    <string name="logo_desc">&appname;\'s logo</string>
+    <string name="app_name" translatable="false">PhoShare</string>
+    <string name="app_slogan">Friendly photo sharing, for one</string>
+    <string name="logo_description">PhoShare logo</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="action_next">Next</string>
+    <string name="action_ok">OK</string>
+    <string name="error_unexpected">Something went wrong. Please try again.</string>
+    <string name="time_just_now">Just now</string>
+    <string name="navigate_up">Back</string>
 
-    <!-- Login -->
-    <string name="login_username_input_hint">Username</string>
-    <string name="login_password_input_hint">Password</string>
-    <string name="login_login_button_text">Login</string>
-    <string name="login_signup_button_text">Sign up</string>
-    <string name="login_forgot_my_password">I forgot my password</string>
-    <string name="login_username_empty_error">Input a username first</string>
-    <string name="login_password_empty_error">Input a password first</string>
-    <string name="login_password_short_error">Passwords cannot has less than 5 characters</string>
-    <string name="login_invalid_username_error">Invalid username</string>
-    <string name="login_invalid_password_error">Password incorrect</string>
-    <string name="login_login_success_message">You\'ve successfully logged in</string>
+    <!-- Accounts: fields and their rules -->
+    <string name="field_username">Username</string>
+    <string name="field_password">Password</string>
+    <string name="field_new_password">New password</string>
+    <string name="field_current_password">Current password</string>
+    <string name="field_confirm_password">Repeat the password</string>
+    <string name="field_security_question">Security question</string>
+    <string name="field_security_answer">Answer</string>
+    <string name="helper_username">3 to 20 letters, digits, dots or underscores</string>
+    <string name="helper_password">At least 8 characters</string>
+    <string name="helper_security_answer">Used to reset your password. Not case-sensitive.</string>
+    <string name="error_username_empty">Enter a username</string>
+    <string name="error_username_length">Use 3 to 20 characters</string>
+    <string name="error_username_characters">Use only letters, digits, dots and underscores</string>
+    <string name="error_password_empty">Enter a password</string>
+    <string name="error_password_short">Use at least 8 characters</string>
+    <string name="error_password_long">Use at most 128 characters</string>
+    <string name="error_passwords_differ">The passwords don\'t match</string>
+    <string name="error_question_empty">Pick a security question</string>
+    <string name="error_answer_empty">Enter an answer</string>
+    <string name="error_answer_long">Use at most 60 characters</string>
+    <string name="error_unknown_user">There\'s no account with this username</string>
+    <string name="error_wrong_password">Wrong password</string>
+    <string name="error_username_taken">This username is taken</string>
+    <string name="error_wrong_answer">That\'s not the answer</string>
+    <string name="error_terms">You have to accept the terms first</string>
 
-    <!-- Sign up -->
-    <string name="signup_password_confirmation_input_hint">Repeat your password</string>
-    <string name="signup_security_answer_input_hint">Provide an answer</string>
-    <string name="signup_terms_agreement">I agree with the terms of use</string>
-    <string name="signup_signup_button_text">Sign up</string>
-    <string name="signup_clear_button_text">Clear</string>
-    <string-array name="signup_security_questions">
+    <string-array name="security_questions">
         <item>What\'s your favorite color?</item>
         <item>What was your first pet\'s name?</item>
         <item>Where is your father from?</item>
         <item>What\'s your favorite sport?</item>
-        <item>What\'s your favorite video-game character?</item>
+        <item>What\'s your favorite video game character?</item>
         <item>What\'s your best friend\'s name?</item>
-        <item>What\'s your catch-phrase?</item>
+        <item>What\'s your catchphrase?</item>
         <item>What\'s your favorite anime?</item>
         <item>What do you despise the most?</item>
     </string-array>
-    <string name="signup_wrong_passwords_error">Passwords don\'t match</string>
-    <string name="signup_security_answer_empty_error">Provide an answer for the security question first</string>
-    <string name="signup_terms_agreement_error">You have to agree with the terms of use</string>
-    <string name="signup_password_confirmation_empty_error">Confirm your password first</string>
-    <string name="signup_registeration_success_message">You\'ve successfully signed up</string>
-    <string name="signup_valid_user_error">This username already exists</string>
 
-    <!-- Main -->
-    <string name="main_logout">Log-out</string>
-    <string name="main_logout_confirmation_message">Do you want to log-out from your account?</string>
-    <string name="main_logout_dialog_positive_button">Yes</string>
-    <string name="main_logout_dialog_negative_button">No</string>
+    <!-- Login -->
+    <string name="login_action">Log in</string>
+    <string name="login_forgot_password">Forgot your password?</string>
+    <string name="login_create_account">Create an account</string>
 
-    <!-- Forgot my Password -->
-    <string name="forgot_password_next_button_next_text">Next</string>
-    <string name="forgot_password_restore_button_next_text">Restore my password</string>
-    <string name="forgot_password_security_question_error">Invalid answer</string>
+    <!-- Sign up -->
+    <string name="sign_up_title">Create an account</string>
+    <string name="sign_up_action">Create account</string>
+    <string name="sign_up_terms_accept">I accept the</string>
+    <string name="sign_up_terms_link">terms of use</string>
+    <string name="sign_up_welcome">Welcome, %1$s!</string>
+    <string name="terms_title">Terms of use</string>
+    <string name="terms_body">PhoShare lives on this device and nowhere else. There\'s no server, no cloud and no internet permission: your photos, comments and favorites never leave the phone unless you share them yourself.\n\nEvery account on this device can see every post on this device. That\'s the point: make another account and you instantly have a friend.\n\nIf you uninstall the app or clear its data, everything is gone for good. Back up what matters.\n\nBe nice to yourself in the comments.</string>
+
+    <!-- Password recovery -->
+    <string name="recover_title">Reset your password</string>
+    <string name="recover_step_username">Which account is it?</string>
+    <string name="recover_step_answer">Answer your security question</string>
+    <string name="recover_step_password">Pick a new password</string>
+    <string name="recover_action">Reset password</string>
+    <string name="recover_done">Your password was reset. Log in with the new one.</string>
+
+    <!-- Main navigation -->
+    <string name="nav_feed">Feed</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Feed and posts -->
+    <string name="feed_new_post">New post</string>
+    <string name="feed_empty_title">No friends yet 😥</string>
+    <string name="feed_empty_message">Nobody has posted anything. Be the first, or make another account and become your own best friend.</string>
+    <string name="feed_empty_action">Make another account</string>
+    <string name="favorites_empty_title">No favorites yet</string>
+    <string name="favorites_empty_message">Tap the heart on a post to keep it here.</string>
+    <string name="post_title">Post</string>
+    <string name="post_photo_description">Photo by %1$s</string>
+    <string name="post_favorite">Add to favorites</string>
+    <string name="post_unfavorite">Remove from favorites</string>
+    <string name="post_share">Share</string>
+    <string name="post_share_chooser">Share the photo with</string>
+    <string name="post_delete">Delete post</string>
+    <string name="post_delete_message">This post, its comments and its favorites will be gone for good.</string>
+    <string name="post_deleted">Post deleted</string>
+    <string name="post_open_author">Open %1$s\'s profile</string>
+    <plurals name="post_favorite_count">
+        <item quantity="one">%d favorite</item>
+        <item quantity="other">%d favorites</item>
+    </plurals>
+    <plurals name="post_comment_count">
+        <item quantity="one">%d comment</item>
+        <item quantity="other">%d comments</item>
+    </plurals>
+
+    <!-- Comments -->
+    <string name="comment_hint">Add a comment…</string>
+    <string name="comment_send">Send comment</string>
+    <string name="comments_empty">No comments yet. Start talking to yourself.</string>
+    <string name="comment_delete">Delete comment</string>
+
+    <!-- New post -->
+    <string name="new_post_title">New post</string>
+    <string name="new_post_pick_hint">Pick a photo from your gallery or take a new one</string>
+    <string name="new_post_gallery">Gallery</string>
+    <string name="new_post_camera">Camera</string>
+    <string name="new_post_caption">Caption</string>
+    <string name="new_post_publish">Publish</string>
+    <string name="new_post_no_photo">Pick a photo first</string>
+    <string name="new_post_no_camera">No camera app is available</string>
+    <string name="new_post_published">Posted!</string>
+    <string name="new_post_preview">The photo to post</string>
+    <string name="error_photo">That photo couldn\'t be read</string>
+
+    <!-- Profile -->
+    <string name="profile_joined">Joined %1$s</string>
+    <string name="profile_avatar_description">%1$s\'s profile photo</string>
+    <string name="profile_empty">No posts yet</string>
+    <string name="profile_edit">Edit profile</string>
+    <string name="profile_change_password">Change password</string>
+    <string name="profile_log_out">Log out</string>
+    <string name="profile_log_out_message">Log out of %1$s? You can log back in, or into another account, at any time.</string>
+    <string name="profile_delete_account">Delete account</string>
+    <string name="profile_delete_account_message">Your posts, comments and favorites will be gone for good. Enter your password to confirm.</string>
+    <string name="profile_delete_account_action">Delete</string>
+    <string name="profile_account_deleted">Account deleted</string>
+    <string name="profile_photo_description">Photo %1$d</string>
+    <plurals name="profile_post_count">
+        <item quantity="one">%d post</item>
+        <item quantity="other">%d posts</item>
+    </plurals>
+
+    <!-- Edit profile -->
+    <string name="edit_profile_change_photo">Change photo</string>
+    <string name="edit_profile_remove_photo">Remove photo</string>
+    <string name="edit_profile_bio">Bio</string>
+    <string name="edit_profile_saved">Profile saved</string>
+
+    <!-- Change password -->
+    <string name="change_password_done">Password changed</string>
 </resources>

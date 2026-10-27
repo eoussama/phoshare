@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PhoShare" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_primary</item>
+        <item name="colorOnPrimary">@color/md_on_primary</item>
+        <item name="colorPrimaryContainer">@color/md_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/md_on_primary_container</item>
+        <item name="colorPrimaryInverse">@color/md_inverse_primary</item>
+        <item name="colorSecondary">@color/md_secondary</item>
+        <item name="colorOnSecondary">@color/md_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/md_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/md_on_secondary_container</item>
+        <item name="colorTertiary">@color/md_tertiary</item>
+        <item name="colorOnTertiary">@color/md_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/md_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/md_on_tertiary_container</item>
+        <item name="colorError">@color/md_error</item>
+        <item name="colorOnError">@color/md_on_error</item>
+        <item name="colorErrorContainer">@color/md_error_container</item>
+        <item name="colorOnErrorContainer">@color/md_on_error_container</item>
+        <item name="android:colorBackground">@color/md_background</item>
+        <item name="colorOnBackground">@color/md_on_background</item>
+        <item name="colorSurface">@color/md_surface</item>
+        <item name="colorOnSurface">@color/md_on_surface</item>
+        <item name="colorSurfaceVariant">@color/md_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/md_on_surface_variant</item>
+        <item name="colorOutline">@color/md_outline</item>
+        <item name="colorOutlineVariant">@color/md_outline_variant</item>
+        <item name="colorSurfaceInverse">@color/md_inverse_surface</item>
+        <item name="colorOnSurfaceInverse">@color/md_inverse_on_surface</item>
+        <item name="colorSurfaceContainerLowest">@color/md_surface_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/md_surface_container_low</item>
+        <item name="colorSurfaceContainer">@color/md_surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/md_surface_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/md_surface_container_highest</item>
+
+        <item name="materialButtonStyle">@style/Widget.PhoShare.Button</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.PhoShare.ExtendedFab</item>
+        <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.PhoShare.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.PhoShare.Large</item>
+    </style>
+
+    <!-- The launch screen (core-splashscreen): the logo on the warm background, then the app's theme. -->
+    <style name="Theme.PhoShare.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.PhoShare</item>
+    </style>
+
+    <!-- Filled buttons in brand yellow with dark ink, in both themes (the yellow is the brand, and it reads in the dark). -->
+    <style name="Widget.PhoShare.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/button_background_tint</item>
+        <item name="android:textColor">@color/button_foreground_tint</item>
+        <item name="iconTint">@color/button_foreground_tint</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+
+    <style name="Widget.PhoShare.ExtendedFab" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="backgroundTint">@color/button_background</item>
+        <item name="android:textColor">@color/button_foreground</item>
+        <item name="iconTint">@color/button_foreground</item>
+    </style>
+
+    <style name="ShapeAppearance.PhoShare.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.PhoShare.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="ShapeAppearance.PhoShare.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.PhoShare.Avatar" parent="">
+        <item name="shapeAppearance">@style/ShapeAppearance.PhoShare.Circle</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">?attr/colorSecondaryContainer</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <!-- A full-width form column, the same on every form screen. -->
+    <style name="PhoShare.FormField" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_m</item>
+    </style>
+</resources>

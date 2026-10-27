@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- The logo's own colors: the yellow disc, the slate camera body and the rainbow stripe. -->
+    <color name="brand_yellow">#FBD000</color>
+    <color name="brand_slate">#37474F</color>
+    <color name="brand_red">#F05454</color>
+    <color name="brand_ink">#231B00</color>
+    <color name="brand_cream">#FFF8E1</color>
+
+    <color name="launcher_background">@color/brand_cream</color>
+    <color name="splash_background">#FFFBF2</color>
+
+    <!-- Filled buttons and the floating action button stay brand yellow in both themes, with dark ink on top. -->
+    <color name="button_background">@color/brand_yellow</color>
+    <color name="button_foreground">@color/brand_ink</color>
+
+    <!-- Material 3 light scheme, warm neutrals around the yellow. -->
+    <color name="md_primary">#6D5E00</color>
+    <color name="md_on_primary">#FFFFFF</color>
+    <color name="md_primary_container">#FBD000</color>
+    <color name="md_on_primary_container">#231B00</color>
+    <color name="md_inverse_primary">#E3C200</color>
+    <color name="md_secondary">@color/brand_slate</color>
+    <color name="md_on_secondary">#FFFFFF</color>
+    <color name="md_secondary_container">#D3E0E6</color>
+    <color name="md_on_secondary_container">#0E1E24</color>
+    <color name="md_tertiary">#9C3F3F</color>
+    <color name="md_on_tertiary">#FFFFFF</color>
+    <color name="md_tertiary_container">#FFDAD7</color>
+    <color name="md_on_tertiary_container">#3F0408</color>
+    <color name="md_error">#BA1A1A</color>
+    <color name="md_on_error">#FFFFFF</color>
+    <color name="md_error_container">#FFDAD6</color>
+    <color name="md_on_error_container">#410002</color>
+    <color name="md_background">#FFFBF2</color>
+    <color name="md_on_background">#1E1B13</color>
+    <color name="md_surface">#FFFBF2</color>
+    <color name="md_on_surface">#1E1B13</color>
+    <color name="md_surface_variant">#EAE2CF</color>
+    <color name="md_on_surface_variant">#4B4739</color>
+    <color name="md_outline">#7C7767</color>
+    <color name="md_outline_variant">#CDC6B4</color>
+    <color name="md_inverse_surface">#33302A</color>
+    <color name="md_inverse_on_surface">#F7F0E2</color>
+    <color name="md_surface_container_lowest">#FFFFFF</color>
+    <color name="md_surface_container_low">#FAF4E7</color>
+    <color name="md_surface_container">#F4EEE1</color>
+    <color name="md_surface_container_high">#EEE8DB</color>
+    <color name="md_surface_container_highest">#E8E2D5</color>
 </resources>

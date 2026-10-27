@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/space_m"
+    android:layout_marginVertical="@dimen/space_s">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:minHeight="56dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/space_m"
+            android:paddingVertical="@dimen/space_s">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatar"
+                style="@style/Widget.PhoShare.Avatar"
+                android:layout_width="@dimen/avatar_medium"
+                android:layout_height="@dimen/avatar_medium" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    tools:text="eoussama" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    tools:text="5 min. ago" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <es.ouss.phoshare.ui.common.SquareImageView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_photo_placeholder"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/space_s">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/favorite"
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSurface"
+                app:icon="@drawable/ic_favorite_border"
+                app:iconTint="?attr/colorOnSurface"
+                tools:text="3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/comments"
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSurface"
+                app:icon="@drawable/ic_comment"
+                app:iconTint="?attr/colorOnSurface"
+                tools:text="2" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/share"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/post_share"
+                app:icon="@drawable/ic_share"
+                app:iconTint="?attr/colorOnSurface" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:paddingHorizontal="@dimen/space_m"
+            android:paddingBottom="@dimen/space_m"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            tools:text="Me, myself and I at the beach." />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

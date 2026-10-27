@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/space_l"
+    android:paddingTop="@dimen/space_l"
+    android:paddingBottom="@dimen/space_m">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatar"
+        style="@style/Widget.PhoShare.Avatar"
+        android:layout_width="@dimen/avatar_large"
+        android:layout_height="@dimen/avatar_large"
+        android:importantForAccessibility="yes" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+        tools:text="eoussama" />
+
+    <TextView
+        android:id="@+id/joined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        tools:text="Joined October 2026" />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:gravity="center"
+        android:maxWidth="@dimen/form_max_width"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        tools:text="Professional loner." />
+
+    <TextView
+        android:id="@+id/post_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        tools:text="3 posts" />
+
+    <Button
+        android:id="@+id/edit"
+        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:text="@string/profile_edit"
+        android:visibility="gone"
+        app:icon="@drawable/ic_edit" />
+
+    <TextView
+        android:id="@+id/no_posts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xl"
+        android:text="@string/profile_empty"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:visibility="gone" />
+</LinearLayout>

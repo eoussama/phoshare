@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The logo inside the launch screen's icon circle (192 dp of a 288 dp canvas). -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/logo"
+    android:inset="60dp" />

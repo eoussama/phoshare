@@ -1,0 +1,48 @@
+# Android without Android Studio: Java, the Android SDK, Gradle (through the wrapper) and adb, so the host needs nothing
+# but Podman (or Docker). `./android.ps1` (Windows) and `./android.sh` (macOS, Linux) build it and tag it with a hash of
+# this file, so any change here builds a new image. Two targets:
+#
+#   build      Gradle, adb, zipalign, apksigner and keytool: every command that does not need the emulator, and CI.
+#   emulator   adds the libraries the Android emulator loads. The emulator and its system image (about 2 GB) are not in
+#              the image: tools/android/emulator.sh downloads them once into the phoshare-emulator-sdk volume.
+#
+# Google ships the Linux SDK tools and the emulator for x86-64 only, so the scripts always build and run it as
+# linux/amd64 (native on a Windows or Linux PC, emulated on Apple Silicon).
+
+FROM docker.io/library/eclipse-temurin:25-jdk-noble@sha256:a9c5ddd386f629518bd500ecfabf7d1e5d32d7ffed735d5c3b1604ae92c830f4 AS build
+
+# The command-line tools and the SHA-1 Google publishes for them in https://dl.google.com/android/repository/repository2-3.xml.
+ARG CMDLINE_TOOLS_VERSION=16111833
+ARG CMDLINE_TOOLS_SHA1=e025545c62a8e64c7559119566a569fb1dec5f60
+# compileSdk 37 compiles against platforms;android-37.0; app/build.gradle.kts pins the same build tools.
+ARG PLATFORM=android-37.0
+ARG BUILD_TOOLS=37.0.0
+
+ENV ANDROID_HOME=/opt/android-sdk \
+    GRADLE_USER_HOME=/cache/gradle
+ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/${BUILD_TOOLS}"
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates curl unzip \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSLo /tmp/cmdline-tools.zip "https://dl.google.com/android/repository/commandlinetools-linux-${CMDLINE_TOOLS_VERSION}_latest.zip" \
+ && echo "${CMDLINE_TOOLS_SHA1}  /tmp/cmdline-tools.zip" | sha1sum -c - \
+ && mkdir -p "${ANDROID_HOME}/cmdline-tools" \
+ && unzip -q /tmp/cmdline-tools.zip -d "${ANDROID_HOME}/cmdline-tools" \
+ && mv "${ANDROID_HOME}/cmdline-tools/cmdline-tools" "${ANDROID_HOME}/cmdline-tools/latest" \
+ && rm /tmp/cmdline-tools.zip
+
+RUN yes | sdkmanager --licenses > /dev/null \
+ && sdkmanager --install "platform-tools" "platforms;${PLATFORM}" "build-tools;${BUILD_TOOLS}" > /dev/null \
+ && sdkmanager --list_installed
+
+WORKDIR /work
+
+FROM build AS emulator
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends libdbus-1-3 libdrm2 libice6 libnss3 libpulse0 libsm6 libx11-6 libxcb1 libxext6 libxi6 libxkbfile1 \
+    libfontconfig1 libxcb-cursor0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 \
+    libxcb-xfixes0 libxcb-xinerama0 libxcb-xkb1 libxkbcommon-x11-0 \
+ && rm -rf /var/lib/apt/lists/*

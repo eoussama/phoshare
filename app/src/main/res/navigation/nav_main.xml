@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Once logged in. The first three are the bottom navigation's tabs. -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/feed">
+
+    <fragment
+        android:id="@+id/feed"
+        android:name="es.ouss.phoshare.ui.main.FeedFragment"
+        android:label="@string/app_name" />
+
+    <fragment
+        android:id="@+id/favorites"
+        android:name="es.ouss.phoshare.ui.main.FavoritesFragment"
+        android:label="@string/nav_favorites" />
+
+    <!-- Your own profile, as a tab. -->
+    <fragment
+        android:id="@+id/profile"
+        android:name="es.ouss.phoshare.ui.main.ProfileFragment"
+        android:label="@string/nav_profile">
+        <argument
+            android:name="userId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+
+    <!-- Anyone's profile, opened from a post or a comment. -->
+    <fragment
+        android:id="@+id/user_profile"
+        android:name="es.ouss.phoshare.ui.main.ProfileFragment"
+        android:label="@string/nav_profile">
+        <argument
+            android:name="userId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/post"
+        android:name="es.ouss.phoshare.ui.main.PostFragment"
+        android:label="@string/post_title">
+        <argument
+            android:name="postId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/new_post"
+        android:name="es.ouss.phoshare.ui.main.NewPostFragment"
+        android:label="@string/new_post_title" />
+
+    <fragment
+        android:id="@+id/edit_profile"
+        android:name="es.ouss.phoshare.ui.main.EditProfileFragment"
+        android:label="@string/profile_edit" />
+
+    <fragment
+        android:id="@+id/change_password"
+        android:name="es.ouss.phoshare.ui.main.ChangePasswordFragment"
+        android:label="@string/profile_change_password" />
+</navigation>

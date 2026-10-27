@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Your own profile's account actions. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/change_password"
+        android:icon="@drawable/ic_lock"
+        android:title="@string/profile_change_password"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/log_out"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/profile_log_out"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/delete_account"
+        android:icon="@drawable/ic_delete_forever"
+        android:title="@string/profile_delete_account"
+        app:showAsAction="never" />
+</menu>

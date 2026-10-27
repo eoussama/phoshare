@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">16dp</dimen>
+    <dimen name="space_l">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+
+    <!-- Forms stay readable on a tablet or in landscape. -->
+    <dimen name="form_max_width">480dp</dimen>
+    <dimen name="logo_size">112dp</dimen>
+    <dimen name="avatar_small">32dp</dimen>
+    <dimen name="avatar_medium">40dp</dimen>
+    <dimen name="avatar_large">96dp</dimen>
+    <dimen name="avatar_editor">128dp</dimen>
+    <!-- Room under the last card for the floating action button. -->
+    <dimen name="fab_clearance">96dp</dimen>
+</resources>

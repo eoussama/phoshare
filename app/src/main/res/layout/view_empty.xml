@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- What a list shows when there is nothing in it yet. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/space_xl"
+    android:visibility="gone">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/empty_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+    <TextView
+        android:id="@+id/empty_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:gravity="center"
+        android:maxWidth="@dimen/form_max_width"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+    <Button
+        android:id="@+id/empty_action"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:visibility="gone" />
+</LinearLayout>

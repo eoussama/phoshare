@@ -1,0 +1,73 @@
+# The app on a device, for every pull request that touches it: the JVM tests and lint, then the instrumented tests and
+# the smoke check on the API 37 16 KB-page emulator, then Google Play's 16 KB alignment check. Everything runs through
+# ./android.sh, exactly as on a developer's machine, with the runner's Podman; GitHub's Linux runners have KVM once
+# /dev/kvm is opened to the runner's user.
+name: Android
+
+on:
+  pull_request:
+    paths:
+      - "app/**"
+      - "gradle/**"
+      - "*.gradle.kts"
+      - "gradle.properties"
+      - "tools/android/**"
+      - "android.sh"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  device:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      CONTAINER_ENGINE: podman
+      # Gradle's caches in a folder the cache action can keep, instead of a Podman volume.
+      ANDROID_GRADLE_CACHE: ${{ github.workspace }}/../gradle-cache
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Open KVM to the runner's user
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ env.ANDROID_GRADLE_CACHE }}
+          key: gradle-${{ hashFiles('gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', '**/*.gradle.kts') }}
+          restore-keys: gradle-
+
+      - name: Unit tests and lint
+        run: bash ./android.sh test
+
+      - name: Instrumented tests and smoke check on the emulator
+        run: bash ./android.sh emulator
+
+      - name: 16 KB page alignment
+        run: bash ./android.sh check
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: app-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: failure()
+        with:
+          name: android-reports
+          path: |
+            test-results/android
+            app/build/reports
+          retention-days: 7

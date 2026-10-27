@@ -1,0 +1,13 @@
+* text=auto
+
+# Shell scripts run in Linux containers, and the image tag is a hash of the Containerfile: LF everywhere.
+*.sh text eol=lf
+Containerfile text eol=lf
+gradlew text eol=lf
+
+# Windows scripts keep Windows line endings.
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+*.jar binary
+*.png binary

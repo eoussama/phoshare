@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/bar"
+        layout="@layout/view_app_bar" />
+
+    <!-- The post, then its comments. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/space_s"
+        android:paddingBottom="@dimen/space_m"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <LinearLayout
+        android:id="@+id/composer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurfaceContainer"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_m"
+        android:paddingTop="@dimen/space_s"
+        android:paddingEnd="@dimen/space_s"
+        android:paddingBottom="@dimen/space_s">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/comment_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/comment_hint"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/comment_hint"
+                android:importantForAutofill="no"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="500"
+                android:maxLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/send"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_s"
+            android:contentDescription="@string/comment_send"
+            app:backgroundTint="@color/button_background_tint"
+            app:icon="@drawable/ic_send"
+            app:iconTint="@color/button_foreground_tint" />
+    </LinearLayout>
+</LinearLayout>

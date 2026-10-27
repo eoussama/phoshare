@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/bar"
+        layout="@layout/view_app_bar" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="@dimen/form_max_width">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <es.ouss.phoshare.ui.common.SquareImageView
+                            android:id="@+id/preview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_photo_placeholder"
+                            android:contentDescription="@string/new_post_preview"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/pick_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawablePadding="@dimen/space_s"
+                            android:gravity="center"
+                            android:maxWidth="240dp"
+                            android:text="@string/new_post_pick_hint"
+                            android:textAppearance="?attr/textAppearanceBodyLarge"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            app:drawableTint="?attr/colorOnSurfaceVariant"
+                            app:drawableTopCompat="@drawable/ic_photo_library" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_m"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/gallery"
+                        style="@style/Widget.Material3.Button.TonalButton.Icon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_s"
+                        android:layout_weight="1"
+                        android:text="@string/new_post_gallery"
+                        app:icon="@drawable/ic_photo_library" />
+
+                    <Button
+                        android:id="@+id/camera"
+                        style="@style/Widget.Material3.Button.TonalButton.Icon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_s"
+                        android:layout_weight="1"
+                        android:text="@string/new_post_camera"
+                        app:icon="@drawable/ic_camera" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/caption_layout"
+                    style="@style/PhoShare.FormField"
+                    android:hint="@string/new_post_caption"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="2200">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLength="2200"
+                        android:minLines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/publish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_m"
+                    android:text="@string/new_post_publish" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
