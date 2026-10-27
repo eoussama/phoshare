@@ -10,6 +10,8 @@ favorite them. Then make another account and congratulate yourself. There is no 
 doesn't even ask for the internet permission. The only way a photo leaves the phone is when you share it to another app
 through Android's share sheet.
 
+See it in pictures in the [showcase](showcase.md).
+
 ## Features
 
 - **Accounts:** sign up with a username, a password and a security question.
