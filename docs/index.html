@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PhoShare: photo sharing for those who don't have friends</title>
+	<meta name="description" content="PhoShare is a tiny offline social network that lives entirely on one Android phone. No server, no cloud, no internet permission, no friends required.">
+	<meta name="theme-color" content="#FBD000">
+	<link rel="canonical" href="https://phoshare.ouss.es/">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://phoshare.ouss.es/">
+	<meta property="og:title" content="PhoShare">
+	<meta property="og:description" content="A simple offline photo sharing app for those who don't have friends 😥">
+	<meta property="og:image" content="https://phoshare.ouss.es/logo.png">
+	<link rel="icon" type="image/png" href="logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
+	<link rel="stylesheet" href="site.css">
+</head>
+<body>
+	<header class="nav">
+		<div class="wrap nav-inner">
+			<a class="brand" href="#top"><img src="logo.png" alt="" width="36" height="36">PhoShare</a>
+			<nav class="nav-links">
+				<a href="#tour">Tour</a>
+				<a href="#private">Privacy</a>
+				<a href="#build">Build it</a>
+				<a class="nav-gh" href="https://github.com/eoussama/phoshare">GitHub</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero">
+			<div class="wrap hero-inner">
+				<div class="hero-copy">
+					<p class="eyebrow">Offline photo sharing for Android</p>
+					<h1>A social network for those who don't have friends <span class="emoji">😥</span></h1>
+					<p class="lede">PhoShare lives entirely on one phone. Make an account, post photos, comment on them and favorite
+						them. Then make another account and congratulate yourself.</p>
+					<div class="actions">
+						<a class="btn btn-primary" href="https://github.com/eoussama/phoshare">Get it on GitHub</a>
+						<a class="btn btn-ghost" href="#tour">Take the tour</a>
+					</div>
+				</div>
+				<div class="hero-art" aria-hidden="true">
+					<span class="sparkle s1">✦</span>
+					<span class="sparkle s2">✦</span>
+					<span class="ring"></span>
+					<figure class="phone phone-back"><img src="showcase/15-post-dark.png" alt="" width="720" height="1600"></figure>
+					<figure class="phone phone-front"><img src="showcase/06-feed.png" alt="" width="720" height="1600"></figure>
+				</div>
+			</div>
+		</section>
+
+		<section class="stats" aria-label="At a glance">
+			<div class="wrap stats-inner">
+				<div><strong>0</strong><span>servers</span></div>
+				<div><strong>0</strong><span>permissions</span></div>
+				<div><strong>0</strong><span>friends required</span></div>
+				<div><strong>7–17</strong><span>Android versions</span></div>
+			</div>
+			<div class="stripe" aria-hidden="true"></div>
+		</section>
+
+		<section id="tour" class="tour">
+			<div class="wrap">
+				<header class="section-head">
+					<p class="eyebrow">The tour</p>
+					<h2>Everything a social network does, minus the people</h2>
+					<p>The "friends" below, <code>lonely_lens</code>, <code>me.again</code> and <code>still_me</code>, are all
+						the same person. That's exactly the point.</p>
+				</header>
+
+				<article class="feature">
+					<div class="feature-copy">
+						<span class="tag">01</span>
+						<h3>Getting in</h3>
+						<p>Accounts live on the device. Sign up with a username, a password and a security question, and you stay
+							logged in until you log out. Forgot your password? Answer your question (case doesn't matter) and pick a
+							new one.</p>
+					</div>
+					<div class="shots">
+						<figure class="phone"><img src="showcase/01-login.png" alt="The login screen" width="720" height="1600" loading="lazy"><figcaption>Log in</figcaption></figure>
+						<figure class="phone"><img src="showcase/04-sign-up.png" alt="The sign-up form, filled in" width="720" height="1600" loading="lazy"><figcaption>Create an account</figcaption></figure>
+						<figure class="phone"><img src="showcase/05-reset-password.png" alt="Resetting the password with the security question" width="720" height="1600" loading="lazy"><figcaption>Reset your password</figcaption></figure>
+					</div>
+				</article>
+
+				<article class="feature reverse">
+					<div class="feature-copy">
+						<span class="tag">02</span>
+						<h3>The feed</h3>
+						<p>Every post on the device, newest first, with favorites, comment counts and a share button. A brand-new
+							device starts out a little lonely, and the app suggests the obvious fix: make another account.</p>
+					</div>
+					<div class="shots">
+						<figure class="phone"><img src="showcase/02-feed-empty.png" alt="The empty feed: No friends yet" width="720" height="1600" loading="lazy"><figcaption>No friends yet 😥</figcaption></figure>
+						<figure class="phone"><img src="showcase/06-feed.png" alt="The feed with posts from three accounts" width="720" height="1600" loading="lazy"><figcaption>Now with "friends"</figcaption></figure>
+					</div>
+				</article>
+
+				<article class="feature">
+					<div class="feature-copy">
+						<span class="tag">03</span>
+						<h3>Post, comment, share</h3>
+						<p>Pick a photo from the system photo picker or take one with the camera app; neither needs a permission.
+							Photos are turned upright and scaled down before they're saved. Open a post to read and write comments,
+							or send the photo to another app through Android's share sheet.</p>
+					</div>
+					<div class="shots">
+						<figure class="phone"><img src="showcase/09-new-post.png" alt="A new post with a photo and a caption" width="720" height="1600" loading="lazy"><figcaption>New post</figcaption></figure>
+						<figure class="phone"><img src="showcase/07-post.png" alt="A post with its comments" width="720" height="1600" loading="lazy"><figcaption>Comments</figcaption></figure>
+						<figure class="phone"><img src="showcase/08-share.png" alt="The Android share sheet with the photo" width="720" height="1600" loading="lazy"><figcaption>Share</figcaption></figure>
+					</div>
+				</article>
+
+				<article class="feature reverse">
+					<div class="feature-copy">
+						<span class="tag">04</span>
+						<h3>Favorites and profiles</h3>
+						<p>Tap the heart to keep a post in your favorites. Every account has a profile with an avatar, a bio, its
+							join date and a grid of its photos. Your own profile is where you edit them, change your password, switch
+							accounts or delete everything you posted.</p>
+					</div>
+					<div class="shots">
+						<figure class="phone"><img src="showcase/10-favorites.png" alt="The favorites tab" width="720" height="1600" loading="lazy"><figcaption>Favorites</figcaption></figure>
+						<figure class="phone"><img src="showcase/11-profile.png" alt="Your own profile with its photo grid" width="720" height="1600" loading="lazy"><figcaption>Your profile</figcaption></figure>
+						<figure class="phone"><img src="showcase/13-someone-elses-profile.png" alt="Another account's profile" width="720" height="1600" loading="lazy"><figcaption>Someone else (still you)</figcaption></figure>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="dark-band">
+			<div class="wrap feature">
+				<div class="feature-copy">
+					<span class="tag">05</span>
+					<h3>Light and dark</h3>
+					<p>Material 3 in the logo's own colors: warm yellow, slate gray and a touch of the rainbow stripe. It follows
+						the system's dark mode, edge to edge, from Android 7 to Android 17.</p>
+				</div>
+				<div class="shots">
+					<figure class="phone"><img src="showcase/14-feed-dark.png" alt="The feed in dark mode" width="720" height="1600" loading="lazy"><figcaption>Feed</figcaption></figure>
+					<figure class="phone"><img src="showcase/15-post-dark.png" alt="A post in dark mode" width="720" height="1600" loading="lazy"><figcaption>Post</figcaption></figure>
+				</div>
+			</div>
+		</section>
+
+		<section id="private" class="private">
+			<div class="wrap">
+				<header class="section-head">
+					<p class="eyebrow">Private by design</p>
+					<h2>Nothing leaves the phone unless you send it</h2>
+				</header>
+				<div class="cards">
+					<div class="card">
+						<h3>No internet permission</h3>
+						<p>There is no server and no cloud. The app can't reach the network even if it wanted to.</p>
+					</div>
+					<div class="card">
+						<h3>No permissions at all</h3>
+						<p>The system photo picker and the camera app hand photos over without the app asking for anything.</p>
+					</div>
+					<div class="card">
+						<h3>Hashed secrets</h3>
+						<p>Passwords and security answers are stored as PBKDF2-HMAC-SHA256 hashes, 310,000 iterations with a random
+							salt.</p>
+					</div>
+					<div class="card">
+						<h3>One way out</h3>
+						<p>The only way a photo leaves the phone is when you share it to another app through the share sheet.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="build" class="build">
+			<div class="wrap build-inner">
+				<div>
+					<p class="eyebrow">Build it yourself</p>
+					<h2>Podman and Git. That's the whole setup.</h2>
+					<p>No Android Studio, no JDK and no SDK. Java, the Android SDK, Gradle and adb all run in a container. One
+						command builds the app, boots an Android 17 emulator and opens it in a window.</p>
+					<a class="btn btn-primary" href="https://github.com/eoussama/phoshare#commands">Read the commands</a>
+				</div>
+				<pre class="terminal"><code><span class="c"># macOS and Linux</span>
+<span class="p">$</span> git clone https://github.com/eoussama/phoshare
+<span class="p">$</span> cd phoshare
+<span class="p">$</span> ./android.sh emulator --window
+
+<span class="c"># Windows</span>
+<span class="p">&gt;</span> ./android.ps1 emulator --window
+
+<span class="c"># or straight to your phone, over Wi-Fi</span>
+<span class="p">$</span> ./android.sh run 192.168.1.20:37000</code></pre>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="wrap footer-inner">
+			<span class="brand"><img src="logo.png" alt="" width="28" height="28">PhoShare</span>
+			<span>Apache 2.0 · <a href="https://github.com/eoussama/phoshare">github.com/eoussama/phoshare</a></span>
+		</div>
+	</footer>
+</body>
+</html>
