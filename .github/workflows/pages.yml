@@ -1,6 +1,7 @@
 # The landing page, on GitHub Pages, whenever it or the screenshots change on master. The page and its screenshots live
 # in docs/; the logo is copied in from the app's resources so there's only one copy of it in the repository, and
-# PRIVACY.md is rendered into private.html, served as /private (the privacy policy URL on Google Play).
+# PRIVACY.md is rendered into private.html, served as /private (the privacy policy URL on Google Play). The trailer
+# that the page plays comes from branding/trailer/.
 name: Pages
 
 on:
@@ -10,6 +11,7 @@ on:
       - "docs/**"
       - "app/src/main/res/drawable-nodpi/logo.png"
       - "PRIVACY.md"
+      - "branding/trailer/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -32,6 +34,8 @@ jobs:
         run: |
           cp -r docs _site
           cp app/src/main/res/drawable-nodpi/logo.png _site/logo.png
+          mkdir -p _site/media
+          cp branding/trailer/phoshare-trailer.mp4 _site/media/
           npx --yes marked@18.1.1 -i PRIVACY.md -o privacy.fragment.html
           node -e '
             const fs = require("fs");

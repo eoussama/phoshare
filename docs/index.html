@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.documentElement.classList.add('js')</script>
 	<title>PhoShare: offline photo sharing for Android</title>
 	<meta name="description" content="PhoShare is a small photo sharing app for Android that keeps every account, post and comment on the phone. No server, no network access, no permissions.">
 	<meta name="theme-color" content="#FBD000">
@@ -17,6 +18,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
 	<link rel="stylesheet" href="site.css">
+	<script src="site.js" defer></script>
 </head>
 <body>
 	<header class="nav">
@@ -29,10 +31,12 @@
 				<a class="nav-gh" href="https://github.com/eoussama/phoshare">GitHub</a>
 			</nav>
 		</div>
+		<div class="progress" aria-hidden="true"></div>
 	</header>
 
 	<main id="top">
 		<section class="hero">
+			<div class="flash" aria-hidden="true"></div>
 			<div class="wrap hero-inner">
 				<div class="hero-copy">
 					<p class="eyebrow">Android · Offline · Open source</p>
@@ -41,15 +45,19 @@
 						the phone. It has no server and doesn't request the internet permission.</p>
 					<div class="actions">
 						<a class="btn btn-primary" href="https://github.com/eoussama/phoshare">Source on GitHub</a>
-						<a class="btn btn-ghost" href="#screenshots">Screenshots</a>
+						<button class="btn btn-ghost" type="button" data-trailer>
+							<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg>
+							Watch the trailer
+						</button>
 					</div>
 				</div>
+				<!-- Layers move by their --d depth with the pointer; .vf is the viewfinder the intro focuses through. -->
 				<div class="hero-art" aria-hidden="true">
-					<span class="sparkle s1">✦</span>
-					<span class="sparkle s2">✦</span>
-					<span class="ring"></span>
-					<figure class="phone phone-back"><img src="showcase/15-post-dark.png" alt="" width="720" height="1600"></figure>
-					<figure class="phone phone-front"><img src="showcase/06-feed.png" alt="" width="720" height="1600"></figure>
+					<div class="layer" style="--d: 16"><span class="ring"></span></div>
+					<div class="layer" style="--d: 36"><figure class="phone phone-back"><img src="showcase/15-post-dark.png" alt="" width="720" height="1600"></figure></div>
+					<div class="layer" style="--d: 64"><figure class="phone phone-front"><img src="showcase/06-feed.png" alt="" width="720" height="1600"></figure></div>
+					<div class="layer" style="--d: -30"><span class="sparkle s1">✦</span><span class="sparkle s2">✦</span></div>
+					<div class="vf"><span></span><span></span><span></span><span></span><i></i></div>
 				</div>
 			</div>
 		</section>
@@ -70,7 +78,8 @@
 					<p class="eyebrow">Screenshots</p>
 					<h2>What's in the app</h2>
 					<p>Taken on the Android 17 emulator. The three accounts in them, <code>lonely_lens</code>,
-						<code>me.again</code> and <code>still_me</code>, were all created on the same device.</p>
+						<code>me.again</code> and <code>still_me</code>, were all created on the same device. Double-tap one to
+						like it.</p>
 				</header>
 
 				<article class="feature">
@@ -204,5 +213,10 @@
 			<span><a href="private">Privacy policy</a> · Apache 2.0 · <a href="https://github.com/eoussama/phoshare">github.com/eoussama/phoshare</a></span>
 		</div>
 	</footer>
+
+	<dialog class="trailer" aria-label="PhoShare trailer">
+		<form method="dialog"><button class="close" aria-label="Close">×</button></form>
+		<video src="media/phoshare-trailer.mp4" controls playsinline preload="none"></video>
+	</dialog>
 </body>
 </html>
