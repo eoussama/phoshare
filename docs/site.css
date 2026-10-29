@@ -191,7 +191,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-sp
 
 .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); padding: 32px 0; text-align: center; }
 
-.stats strong { display: block; font: 800 40px/1 var(--display); color: var(--yellow); }
+.stats strong { display: block; margin-bottom: 4px; font: 800 30px/1.1 var(--display); color: var(--yellow); }
 
 .stats span { font-size: 15px; opacity: .85; }
 
@@ -214,6 +214,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-sp
 	align-items: center;
 	padding-bottom: 96px;
 }
+
+/* Swapping the columns along with the order keeps the screenshots in the wide column on both sides. */
+.feature.reverse { grid-template-columns: 1.5fr 1fr; }
 
 .feature.reverse .feature-copy { order: 2; }
 
@@ -240,7 +243,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-sp
 	border-radius: 32px;
 }
 
-.shots .phone { flex: 0 1 200px; min-width: 0; }
+/* A third of the row each, whether a row has two phones or three, so every screenshot is the same size. */
+.shots .phone { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; }
 
 .dark-band { background: #15130E; color: #EAE2CF; padding: 96px 0 0; }
 
@@ -320,6 +324,23 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-sp
 
 .footer .brand { font-size: 17px; color: var(--text); }
 
+/* The privacy policy */
+
+.legal { max-width: 760px; padding: 72px 0 112px; }
+
+.legal h1 { font-size: clamp(40px, 6vw, 60px); font-weight: 800; margin-bottom: 8px; }
+
+/* The effective date, right under the title. */
+.legal h1 + p { margin-top: 0; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+.legal h2 { font-size: 26px; font-weight: 700; margin: 48px 0 12px; }
+
+.legal p, .legal li { color: var(--muted); }
+
+.legal li { margin-bottom: 6px; }
+
+.legal strong { color: var(--text); }
+
 /* Smaller screens */
 
 @media (max-width: 900px) {
@@ -328,6 +349,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-sp
 	.hero-art { height: 440px; max-width: 440px; width: 100%; margin-inline: auto; }
 	.hero-art .phone { width: 180px; }
 	.feature { gap: 32px; padding-bottom: 72px; }
+	.feature.reverse { grid-template-columns: 1fr; }
 	.feature.reverse .feature-copy { order: 0; }
 	.cards { grid-template-columns: repeat(2, 1fr); }
 	.build-inner { padding: 32px; }
@@ -337,6 +359,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-sp
 	.nav-links a:not(.nav-gh) { display: none; }
 	.stats-inner { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
 	.shots { gap: 10px; padding: 24px 16px 56px; border-radius: 24px; }
+	.shots .phone { flex-basis: calc((100% - 20px) / 3); }
 	.phone { padding: 4px; border-radius: 18px; }
 	.phone img { border-radius: 14px; }
 	.phone figcaption { font-size: 12px; margin-top: 10px; }

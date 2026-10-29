@@ -1,0 +1,1 @@
+A tiny offline social network for one. Post, comment and favorite your photos.

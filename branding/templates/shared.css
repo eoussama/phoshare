@@ -1,0 +1,36 @@
+/* The app's palette, from app/src/main/res/values/colors.xml, and the landing page's display face. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=block");
+
+:root {
+	--yellow: #FBD000;
+	--slate: #37474F;
+	--red: #F05454;
+	--green: #7CB342;
+	--blue: #29B6F6;
+	--ink: #231B00;
+	--cream: #FFF8E1;
+	--night: #15130E;
+	--display: "Bricolage Grotesque", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; overflow: hidden; }
+
+body { font-family: var(--display); -webkit-font-smoothing: antialiased; }
+
+img { display: block; }
+
+.phone {
+	padding: 14px;
+	background: #111;
+	border-radius: 64px;
+	box-shadow: 0 40px 80px -30px rgb(0 0 0 / .45);
+}
+
+.phone img { width: 100%; border-radius: 50px; }
+
+.stripe {
+	height: 14px;
+	background: linear-gradient(90deg, var(--red) 0 25%, var(--yellow) 25% 50%, var(--green) 50% 75%, var(--blue) 75%);
+}

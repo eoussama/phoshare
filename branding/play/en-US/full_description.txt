@@ -1,0 +1,36 @@
+PhoShare is a simple photo sharing app for those who don't have friends.
+
+It's a tiny social network that lives entirely on your phone. Make an account, post photos, comment on them and favorite them. Then make another account and congratulate yourself. There's no server and no cloud, and the app doesn't even ask for the internet permission.
+
+ACCOUNTS
+• Sign up with a username, a password and a security question.
+• Stay logged in until you log out, and switch between accounts whenever you like.
+• Forgot your password? Answer your security question and pick a new one.
+• Passwords and answers are stored only as strong PBKDF2 hashes.
+
+THE FEED
+• Every post on the device, newest first.
+• Favorites, comment counts and a share button on every post.
+• A brand-new phone starts out a little lonely. The fix is one more account away.
+
+POSTS, COMMENTS AND FAVORITES
+• Pick a photo with the system photo picker or take one with your camera app.
+• Photos are turned upright and scaled down before they're saved.
+• Add a caption, read and write comments, and tap the heart to keep a post in your favorites.
+
+PROFILES
+• An avatar, a bio, a join date and a grid of every photo you posted.
+• Change your password or delete your account along with everything it posted.
+
+PRIVATE BY DESIGN
+• No internet permission: nothing is uploaded, because nothing can be.
+• No permissions at all: the photo picker and the camera app need none.
+• No ads, no analytics and no tracking.
+• The only way a photo leaves your phone is when you share it to another app yourself.
+
+MADE FOR ANDROID
+• Material 3 in the logo's own colors, in light and dark.
+• Edge to edge, from Android 7 to Android 17.
+• Open source under the Apache 2.0 license.
+
+Everything stays on the device, so uninstalling the app or clearing its data removes it for good. Be nice to yourself in the comments.

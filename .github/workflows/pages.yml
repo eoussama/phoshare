@@ -1,5 +1,6 @@
 # The landing page, on GitHub Pages, whenever it or the screenshots change on master. The page and its screenshots live
-# in docs/; the logo is copied in from the app's resources so there's only one copy of it in the repository.
+# in docs/; the logo is copied in from the app's resources so there's only one copy of it in the repository, and
+# PRIVACY.md is rendered into private.html, served as /private (the privacy policy URL on Google Play).
 name: Pages
 
 on:
@@ -8,6 +9,7 @@ on:
     paths:
       - "docs/**"
       - "app/src/main/res/drawable-nodpi/logo.png"
+      - "PRIVACY.md"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -30,6 +32,13 @@ jobs:
         run: |
           cp -r docs _site
           cp app/src/main/res/drawable-nodpi/logo.png _site/logo.png
+          npx --yes marked@18.1.1 -i PRIVACY.md -o privacy.fragment.html
+          node -e '
+            const fs = require("fs");
+            const page = fs.readFileSync("_site/private.html", "utf8");
+            if (!page.includes("<!-- PRIVACY.md -->")) throw new Error("private.html lost its placeholder");
+            fs.writeFileSync("_site/private.html", page.replace("<!-- PRIVACY.md -->", () => fs.readFileSync("privacy.fragment.html", "utf8")));
+          '
 
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Google Play's feature graphic: 1024 x 500. Play may crop it or lay its own play button over the center, so the
+     name stays on the left and the right side is only phones. -->
+<meta charset="utf-8">
+<link rel="stylesheet" href="shared.css">
+<style>
+	body {
+		position: relative;
+		width: 1024px;
+		height: 500px;
+		background: var(--yellow);
+		color: var(--ink);
+	}
+
+	.copy { position: absolute; left: 72px; top: 92px; width: 520px; }
+
+	.copy img { width: 120px; height: 120px; margin-bottom: 20px; }
+
+	h1 { margin: 0; font-size: 88px; font-weight: 800; line-height: 1; letter-spacing: -.03em; }
+
+	p { margin: 18px 0 0; font-size: 30px; font-weight: 500; line-height: 1.25; }
+
+	.phone { position: absolute; width: 240px; padding: 8px; border-radius: 34px; }
+
+	.phone img { border-radius: 27px; }
+
+	.front { left: 610px; top: 70px; transform: rotate(-6deg); z-index: 1; }
+
+	.back { left: 790px; top: 120px; transform: rotate(7deg); }
+
+	.stripe { position: absolute; left: 0; right: 0; bottom: 0; }
+</style>
+<div class="copy">
+	<img src="../../app/src/main/res/drawable-nodpi/logo.png" alt="">
+	<h1>PhoShare</h1>
+	<p>Photo sharing for those who<br>don't have friends</p>
+</div>
+<div class="phone front"><img src="../../docs/showcase/06-feed.png" alt=""></div>
+<div class="phone back"><img src="../../docs/showcase/15-post-dark.png" alt=""></div>
+<div class="stripe"></div>

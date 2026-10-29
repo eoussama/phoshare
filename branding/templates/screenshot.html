@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- Google Play's phone screenshots: 1080 x 1920 (9:16). The emulator's own screenshots are 9:20, longer than the 2:1
+     Play allows, so each one sits in a phone frame under a caption. ?shot=1 to ?shot=8 picks the screenshot. -->
+<meta charset="utf-8">
+<link rel="stylesheet" href="shared.css">
+<style>
+	body {
+		width: 1080px;
+		height: 1920px;
+		padding-top: 150px;
+		text-align: center;
+	}
+
+	.yellow { background: var(--yellow); color: var(--ink); }
+	.cream { background: var(--cream); color: var(--ink); }
+	.slate { background: var(--slate); color: #fff; }
+	.night { background: var(--night); color: #EAE2CF; }
+
+	h1 { margin: 0 auto; max-width: 940px; font-size: 84px; font-weight: 800; line-height: 1.02; letter-spacing: -.03em; }
+
+	p { margin: 28px auto 0; max-width: 860px; font-size: 38px; font-weight: 500; line-height: 1.3; opacity: .8; }
+
+	.phone { position: absolute; left: 216px; top: 460px; width: 648px; }
+
+	.slate .phone, .night .phone { background: #000; box-shadow: 0 40px 80px -30px rgb(0 0 0 / .8); }
+
+	.stripe { position: absolute; left: 0; right: 0; bottom: 0; }
+</style>
+<h1 id="title"></h1>
+<p id="subtitle"></p>
+<div class="phone"><img id="shot" alt=""></div>
+<div class="stripe"></div>
+<script>
+	const shots = [
+		["yellow", "06-feed", "A social network for one", "Post, comment and favorite. Then do it all again from another account."],
+		["cream", "02-feed-empty", "No friends yet?", "Make another account. Instant friend."],
+		["slate", "09-new-post", "Post from the gallery or the camera", "Neither one needs a permission."],
+		["yellow", "07-post", "Comment on everything", "Someone has to."],
+		["cream", "10-favorites", "Keep your favorites", "Every heart, the latest first."],
+		["slate", "11-profile", "A profile for every you", "An avatar, a bio and a grid of your photos."],
+		["yellow", "08-share", "Share when you want to", "The only way a photo ever leaves the phone."],
+		["night", "14-feed-dark", "Fully offline, light or dark", "No server, no cloud and no internet permission."],
+	];
+	const [theme, file, title, subtitle] = shots[Number(new URLSearchParams(location.search).get("shot") || 1) - 1];
+	document.body.className = theme;
+	document.getElementById("title").textContent = title;
+	document.getElementById("subtitle").textContent = subtitle;
+	document.getElementById("shot").src = `../../docs/showcase/${file}.png`;
+</script>
